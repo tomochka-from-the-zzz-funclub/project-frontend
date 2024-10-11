@@ -25,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+    <head>
+        <title>Sirius - кинотеатр</title>
+        <link rel="icon" type="image/png" href="favicon.png" sizes="32x32"/>
+    </head>
+    <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background relative dark h-full`}
       >
         {children}

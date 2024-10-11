@@ -1,10 +1,10 @@
-import {CardContent, CardFooter} from "@/components/ui/card";
+import {CardContent} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {cn} from "@/lib/utils";
 import {z} from "zod";
-import {Button} from "@/components/ui/button";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form";
+import {useRouter} from "next/navigation";
 
 const registerSchema = z.object({
     name: z.string().min(1, "Имя обязательно"),
@@ -27,8 +27,10 @@ export default function RegisterForm({isVisible}: LoginFormProps) {
         resolver: zodResolver(registerSchema),
     });
 
+    const router = useRouter()
+
     const onSubmit = (data: any) => {
-        console.log(data);
+        return router.replace("/")
     };
 
     const inputClass = "w-full bg-white text-gray-900 rounded-lg";

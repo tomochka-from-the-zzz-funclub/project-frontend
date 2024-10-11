@@ -2,8 +2,8 @@
 
 import {Card, CardTitle} from "@/components/ui/card";
 import {useState} from "react";
-import Forms from "@/app/components/(shared)/auth/Forms";
-import Banner from "@/app/components/(shared)/auth/banner";
+import Forms from "@/components/(shared)/auth/Forms";
+import Banner from "@/components/(shared)/auth/banner";
 
 export default function SignInBoard() {
     const [isRegistering, setIsRegistering] = useState(false);

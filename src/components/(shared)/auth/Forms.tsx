@@ -1,8 +1,8 @@
 'use client'
 
 import React, {useEffect, useState} from "react";
-import LoginForm from "@/app/components/(shared)/auth/forms/LoginForm";
-import RegisterForm from "@/app/components/(shared)/auth/forms/RegisterForm";
+import LoginForm from "@/components/(shared)/auth/forms/LoginForm";
+import RegisterForm from "@/components/(shared)/auth/forms/RegisterForm";
 
 interface FormsProps {
     isRegistering: boolean,
