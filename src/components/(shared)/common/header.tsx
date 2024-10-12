@@ -1,6 +1,12 @@
+'use client'
 import {Input} from "@/components/ui/input";
+import {NeonGradientCard} from "@/components/ui/neon-gradient-card";
+import {useState} from "react";
 
 export default function Header() {
+    const [isChecked, setIsChecked] = useState(false);
+
+
     return <header className={"flex flex-wrap items-center justify-between space-x-2"}>
         <div className={"space-x-0.5"}>
             <svg width="92" height="30" viewBox="0 0 92 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,21 +17,33 @@ export default function Header() {
 
         </div>
         <nav className="flex space-x-6 text-gray-300 text-2xl">
-            <a href={"#"}>Главная</a>
-            <a href={"#"}>Избранное</a>
-            <a href={"#"}>Студия</a>
-            <a href={"#"}>Подписки</a>
+            <a href={"#"} className={"hover:text-white transition ease-in"}>Главная</a>
+            <a href={"#"} className={"hover:text-white transition ease-in"}>Избранное</a>
+            <a href={"#"} className={"hover:text-white transition ease-in"}>Студия</a>
+            <a href={"#"} className={"hover:text-white transition ease-in"}>Подписки</a>
         </nav>
         <div className="flex items-center space-x-2">
-            <label className="flex items-center cursor-pointer">
-                <input type="checkbox" className="hidden"/>
-                <div className="w-10 h-5 flex items-center bg-gray-700 rounded-full p-1">
-                    <div className="bg-white w-4 h-4 rounded-full shadow-md transform transition-transform"></div>
-                </div>
-                <span className="ml-2 text-gray-300">Умный поиск</span>
-            </label>
+            <NeonGradientCard borderRadius={60} className="flex items-center w-1/2 ">
+                <label className="flex items-center cursor-pointer">
+                    <input
+                        type="checkbox"
+                        className="hidden"
+                        checked={isChecked}
+                        onChange={() => setIsChecked(!isChecked)}
+                    />
+                    <div className="relative">
+                        <div className="w-12 h-6 bg-gray-600 rounded-full shadow-inner"></div>
+                        <div
+                            className={`absolute top-0 left-0 w-6 h-6 bg-gradient-to-br from-[#ff2975] to-[#00FFF1] rounded-full shadow transform transition-transform duration-300 ${
+                                isChecked ? "translate-x-6" : "translate-x-0"
+                            }`}
+                        ></div>
+                    </div>
+                    <span className="ml-4 text-white text-xl">Умный поиск</span>
+                </label>
+            </NeonGradientCard>
 
-            <div className="relative w-24">
+            <div className="relative w-64">
                 <Input type="text" placeholder="Поиск"
                        className="bg-gray-800 text-gray-300 rounded-full px-4 py-1 pl-10 focus:outline-none"/>
                 <svg className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
@@ -37,9 +55,22 @@ export default function Header() {
             </div>
 
             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700">
-                <svg className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.67 0 8 1.34 8 4v2H4v-2c0-2.66 5.33-4 8-4zm0-2a4 4 0 110-8 4 4 0 010 8z"/>
-                </svg>
+                <button
+                    onClick={() => {
+                        // Обработка клика по SVG
+                        console.log("SVG clicked");
+                    }}
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 focus:outline-none"
+                    aria-label={"Профиль"}
+                >
+                    <svg
+                        className="w-5 h-5 text-gray-300"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path d="M12 12c2.67 0 8 1.34 8 4v2H4v-2c0-2.66 5.33-4 8-4zm0-2a4 4 0 110-8 4 4 0 010 8z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
