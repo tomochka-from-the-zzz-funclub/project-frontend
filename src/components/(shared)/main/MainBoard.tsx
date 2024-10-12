@@ -1,9 +1,8 @@
 import Container from "@/components/(shared)/common/container";
+import Header from "@/components/(shared)/common/header";
 
 export default function MainBoard() {
     return <Container>
-        <div>hello</div>
-        <div>world</div>
-        <div>privet</div>
+        <Header/>
     </Container>
 };

@@ -1,10 +1,11 @@
-import {CardContent} from "@/components/ui/card";
+import {CardContent, CardFooter} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
 import {cn} from "@/lib/utils";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/navigation";
+import {Button} from "@/components/ui/button";
 
 const registerSchema = z.object({
     name: z.string().min(1, "Имя обязательно"),
@@ -93,6 +94,18 @@ export default function RegisterForm({isVisible}: LoginFormProps) {
                         {errors.password && <span>{errors.password.message}</span>}
                     </div>
                 </form>
+                <CardFooter className="mt-4 flex-col">
+                    <Button type="submit"
+                            className="w-full transition-all duration-150 text-white bg-[#9C2328] hover:bg-[#5D1518] rounded-lg">
+                        Зарегистрироваться
+                    </Button>
+                    <div className="flex w-full justify-between mt-4 text-sm">
+                        <a href="#" className={"text-gray-400"}>
+                            Уже есть аккаунт? <span
+                            className="transition-all duration-150 hover:text-gray-200 underline">Войти</span>
+                        </a>
+                    </div>
+                </CardFooter>
             </CardContent>
         </div>
     );

@@ -1,9 +1,5 @@
-import {Card, CardContent} from "@/components/ui/card";
-
 export default function Container({children}: { children: React.ReactNode }) {
-    return <Card className={"w-full m-5 "}>
-        <CardContent>
+    return <div className={"w-full ml-10 mr-10  mt-2 max-w-full"}>
             {children}
-        </CardContent>
-    </Card>;
+    </div>;
 }

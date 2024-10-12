@@ -1,13 +1,12 @@
-'use client'
-
 import {Card, CardTitle} from "@/components/ui/card";
-import {useState} from "react";
 import Forms from "@/components/(shared)/auth/Forms";
-import Banner from "@/components/(shared)/auth/banner";
+import {useRouter} from "next/compat/router";
 
 export default function SignInBoard() {
-    const [isRegistering, setIsRegistering] = useState(false);
 
+    const router = useRouter();
+
+    const isRegistering = router?.pathname === "/register";
 
     const containerClass = "flex items-center justify-center min-h-screen bg-white custom-background";
 
@@ -19,7 +18,6 @@ export default function SignInBoard() {
                     {isRegistering ? "Регистрация" : "Авторизация"}
                 </CardTitle>
                 <Forms isRegistering={isRegistering}/>
-                <Banner isRegistering={isRegistering} setIsRegistering={setIsRegistering}/>
             </Card>
         </div>
     )
