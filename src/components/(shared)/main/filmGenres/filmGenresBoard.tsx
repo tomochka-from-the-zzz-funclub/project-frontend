@@ -2,64 +2,32 @@ import {Button} from "@/components/ui/button";
 import {logos} from "@/components/(shared)/main/popularFilms/logos";
 
 const FilmGenresBoard = () => {
-    const buttonClassName = "bg-[#2F2F2F] rounded-xl text-white text-xl w-48 h-16 flex items-center justify-center gap-2 hover:bg-gray-600";
+    const buttonClassName = "bg-[#2F2F2F] rounded-xl text-white text-base sm:text-xl w-full sm:w-48 h-12 sm:h-16 flex items-center justify-center gap-2 hover:bg-gray-600";
+
+    const genres = [
+        {name: "Фильмы", logo: logos.film},
+        {name: "Сериалы", logo: logos.serials},
+        {name: "Комедии", logo: logos.comedies},
+        {name: "Боевики", logo: logos.fights},
+        {name: "Мелодрамы", logo: logos.melodramas},
+        {name: "Драмы", logo: logos.dramas},
+        {name: "Ужасы", logo: logos.horrors},
+        {name: "Спорт", logo: logos.sport},
+        {name: "Документалки", logo: logos.documental},
+    ];
 
     return (
-        <div className="pt-8 flex flex-wrap gap-4 justify-center">
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.film}
-                    <span>Фильмы</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.serials}
-                    <span>Сериалы</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.comedies}
-                    <span>Комедии</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.fights}
-                    <span>Боевики</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.melodramas}
-                    <span>Мелодрамы</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.dramas}
-                    <span>Драмы</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.horrors}
-                    <span>Ужасы</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.sport}
-                    <span>Спорт</span>
-                </div>
-            </Button>
-            <Button className={buttonClassName}>
-                <div className="flex items-center gap-2">
-                    {logos.documental}
-                    <span>Документалки</span>
-                </div>
-            </Button>
+        <div className="pt-8 px-4 sm:px-0">
+            <div className="flex flex-wrap justify-center gap-4">
+                {genres.map((genre, index) => (
+                    <Button key={index} className={buttonClassName}>
+                        <div className="flex items-center gap-2">
+                            {genre.logo}
+                            <span>{genre.name}</span>
+                        </div>
+                    </Button>
+                ))}
+            </div>
         </div>
     );
 }

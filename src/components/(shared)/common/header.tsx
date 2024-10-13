@@ -2,10 +2,13 @@
 import {Input} from "@/components/ui/input";
 import {NeonGradientCard} from "@/components/ui/neon-gradient-card";
 import {useState} from "react";
+import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
     const [isChecked, setIsChecked] = useState(false);
 
+    const router = useRouter()
 
     return <header className={"flex flex-wrap items-center justify-between space-x-2"}>
         <div className={"space-x-0.5"}>
@@ -17,10 +20,10 @@ export default function Header() {
 
         </div>
         <nav className="flex space-x-6 text-gray-300 text-2xl">
-            <a href={"#"} className={"hover:text-white transition ease-in"}>Главная</a>
-            <a href={"#"} className={"hover:text-white transition ease-in"}>Избранное</a>
-            <a href={"#"} className={"hover:text-white transition ease-in"}>Студия</a>
-            <a href={"#"} className={"hover:text-white transition ease-in"}>Подписки</a>
+            <Link href={"/"} className={"hover:text-white transition ease-in"}>Главная</Link>
+            <Link href={"#"} className={"hover:text-white transition ease-in"}>Избранное</Link>
+            <Link href={"#"} className={"hover:text-white transition ease-in"}>Студия</Link>
+            <Link href={"#"} className={"hover:text-white transition ease-in"}>Подписки</Link>
         </nav>
         <div className="flex items-center space-x-2">
             <NeonGradientCard borderRadius={60} className="flex items-center w-1/2 ">
@@ -57,8 +60,7 @@ export default function Header() {
             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700">
                 <button
                     onClick={() => {
-                        // Обработка клика по SVG
-                        console.log("SVG clicked");
+                        router.push("/profile")
                     }}
                     className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 focus:outline-none"
                     aria-label={"Профиль"}
