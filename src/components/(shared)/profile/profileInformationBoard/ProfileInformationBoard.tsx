@@ -150,30 +150,30 @@ const ProfileInformationBoard = () => {
                     <div className="flex items-center flex-row text-white w-full">
                         <div className="w-1/2 space-y-4">
                             <div>
-                                <span className="font-bold text-4xl">Имя:</span>
+                                <span className="font-bold text-3xl">Имя:</span>
                                 <p className="text-xl">{watch('firstName')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-4xl">Фамилия:</span>
+                                <span className="font-bold text-3xl">Фамилия:</span>
                                 <p className="text-xl">{watch('lastName')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-4xl">Дата рождения:</span>
+                                <span className="font-bold text-3xl">Дата рождения:</span>
                                 <p className="text-xl">{watch('dateOfBirth')}</p>
                             </div>
                         </div>
 
                         <div className="w-1/2 space-y-4">
                             <div>
-                                <span className="font-bold text-4xl">E-mail:</span>
+                                <span className="font-bold text-3xl">E-mail:</span>
                                 <p className="text-xl">{watch('email')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-4xl">Способ оплаты:</span>
+                                <span className="font-bold text-3xl">Способ оплаты:</span>
                                 <p className="text-xl">{watch('paymentMethod') === 'new' ? 'Новая карта' : watch('paymentMethod')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-4xl">Статус подписки:</span>
+                                <span className="font-bold text-3xl">Статус подписки:</span>
                                 <p className="text-xl">Активна (стандарт)</p>
                             </div>
                         </div>
