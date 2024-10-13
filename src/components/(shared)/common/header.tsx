@@ -21,7 +21,7 @@ export default function Header() {
         </div>
         <nav className="flex space-x-6 text-gray-300 text-2xl">
             <Link href={"/"} className={"hover:text-white transition ease-in"}>Главная</Link>
-            <Link href={"#"} className={"hover:text-white transition ease-in"}>Избранное</Link>
+            <Link href={"/favourites"} className={"hover:text-white transition ease-in"}>Избранное</Link>
             <Link href={"#"} className={"hover:text-white transition ease-in"}>Студия</Link>
             <Link href={"#"} className={"hover:text-white transition ease-in"}>Подписки</Link>
         </nav>
