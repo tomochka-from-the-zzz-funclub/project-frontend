@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {cn} from "@/lib/utils";
 
 interface HorizontalCardProps {
+    children: any;
     imageUrl: string;
     href: string;
     onClick?: () => void;
@@ -12,6 +13,7 @@ interface HorizontalCardProps {
 }
 
 const HorizontalCard: React.FC<HorizontalCardProps> = ({
+                                                           children,
                                                            imageUrl,
                                                            href,
                                                            onClick,
@@ -30,6 +32,7 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({
             )}
             style={{backgroundImage: `url(${imageUrl})`}}
         >
+            {children}
         </div>
     );
 
