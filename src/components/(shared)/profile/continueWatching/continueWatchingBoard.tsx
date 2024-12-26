@@ -33,7 +33,7 @@ const watchItems: WatchItem[] = [
 
 export default function ContinueWatching() {
     return (
-        <div className="p-6 text-white">
+        <div className="py-6 text-white">
             <h2 className="text-2xl font-bold mb-4">Продолжить просмотр</h2>
             <div className="flex justify-between space-x-4 overflow-x-auto pb-4">
                 {watchItems.map((item) => (

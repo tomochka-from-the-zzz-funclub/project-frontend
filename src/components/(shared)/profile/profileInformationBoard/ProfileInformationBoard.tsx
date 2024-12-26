@@ -31,7 +31,7 @@ const ProfileInformationBoard = () => {
             firstName: "Иван",
             lastName: "Иванов",
             dateOfBirth: "2000-01-01",
-            email: "ilovemasha@kostychenko.ru",
+            email: "mashenkaluchaya@chapalda.ru",
             paymentMethod: "**** **** **** 8627",
         }
     })
@@ -144,37 +144,37 @@ const ProfileInformationBoard = () => {
             </div>
 
             <div className="mt-6 p-10 w-full bg-[#2F2F2F] rounded-2xl flex items-center">
-                <img src="/cat.png" alt="Профильное изображение"/>
+                <img src="/cat.png" className={"w-64 h-64"} alt="Профильное изображение"/>
 
                 <div className="ml-12 flex-grow flex items-center">
                     <div className="flex items-center flex-row text-white w-full">
                         <div className="w-1/2 space-y-4">
                             <div>
-                                <span className="font-bold text-3xl">Имя:</span>
-                                <p className="text-xl">{watch('firstName')}</p>
+                                <span className="font-bold text-lg">Имя:</span>
+                                <p className="text-sm">{watch('firstName')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-3xl">Фамилия:</span>
-                                <p className="text-xl">{watch('lastName')}</p>
+                                <span className="font-bold text-lg">Фамилия:</span>
+                                <p className="text-sm">{watch('lastName')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-3xl">Дата рождения:</span>
-                                <p className="text-xl">{watch('dateOfBirth')}</p>
+                                <span className="font-bold text-lg">Дата рождения:</span>
+                                <p className="text-sm">{watch('dateOfBirth')}</p>
                             </div>
                         </div>
 
                         <div className="w-1/2 space-y-4">
                             <div>
-                                <span className="font-bold text-3xl">E-mail:</span>
-                                <p className="text-xl">{watch('email')}</p>
+                                <span className="font-bold text-lg">E-mail:</span>
+                                <p className="text-sm">{watch('email')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-3xl">Способ оплаты:</span>
-                                <p className="text-xl">{watch('paymentMethod') === 'new' ? 'Новая карта' : watch('paymentMethod')}</p>
+                                <span className="font-bold text-lg">Способ оплаты:</span>
+                                <p className="text-sm">{watch('paymentMethod') === 'new' ? 'Новая карта' : watch('paymentMethod')}</p>
                             </div>
                             <div>
-                                <span className="font-bold text-3xl">Статус подписки:</span>
-                                <p className="text-xl">Активна (стандарт)</p>
+                                <span className="font-bold text-lg">Статус подписки:</span>
+                                <p className="text-sm">Активна (стандарт)</p>
                             </div>
                         </div>
                     </div>

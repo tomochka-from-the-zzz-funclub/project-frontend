@@ -13,7 +13,7 @@ const NewFilmsBoard = () => {
 
     return (
         <div className="pt-5 px-4 sm:px-0">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">Фильмы-новинки {">"}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5">Новые фильмы {">"}</h1>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {films.map((film, index) => (
@@ -21,6 +21,7 @@ const NewFilmsBoard = () => {
                         key={index}
                         href={film.href}
                         imageUrl={film.imageUrl}
+                        widthClass="w-full"
                     />
                 ))}
             </div>
